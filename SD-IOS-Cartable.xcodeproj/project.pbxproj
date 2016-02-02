@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80114A1E1C60A14B0087E572 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80114A1D1C60A14B0087E572 /* AppDelegate.swift */; };
+		80114A201C60A14B0087E572 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80114A1F1C60A14B0087E572 /* ViewController.swift */; };
+		80114A231C60A14B0087E572 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80114A211C60A14B0087E572 /* Main.storyboard */; };
+		80114A261C60A14B0087E572 /* SD_IOS_Cartable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80114A241C60A14B0087E572 /* SD_IOS_Cartable.xcdatamodeld */; };
+		80114A281C60A14B0087E572 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80114A271C60A14B0087E572 /* Assets.xcassets */; };
+		80114A2B1C60A14B0087E572 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80114A291C60A14B0087E572 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		80114A1A1C60A14B0087E572 /* SD-IOS-Cartable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SD-IOS-Cartable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80114A1D1C60A14B0087E572 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		80114A1F1C60A14B0087E572 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80114A221C60A14B0087E572 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		80114A251C60A14B0087E572 /* SD_IOS_Cartable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SD_IOS_Cartable.xcdatamodel; sourceTree = "<group>"; };
+		80114A271C60A14B0087E572 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80114A2A1C60A14B0087E572 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		80114A2C1C60A14B0087E572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80114A171C60A14B0087E572 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80114A111C60A14B0087E572 = {
+			isa = PBXGroup;
+			children = (
+				80114A1C1C60A14B0087E572 /* SD-IOS-Cartable */,
+				80114A1B1C60A14B0087E572 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80114A1B1C60A14B0087E572 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80114A1A1C60A14B0087E572 /* SD-IOS-Cartable.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80114A1C1C60A14B0087E572 /* SD-IOS-Cartable */ = {
+			isa = PBXGroup;
+			children = (
+				80114A1D1C60A14B0087E572 /* AppDelegate.swift */,
+				80114A1F1C60A14B0087E572 /* ViewController.swift */,
+				80114A211C60A14B0087E572 /* Main.storyboard */,
+				80114A271C60A14B0087E572 /* Assets.xcassets */,
+				80114A291C60A14B0087E572 /* LaunchScreen.storyboard */,
+				80114A2C1C60A14B0087E572 /* Info.plist */,
+				80114A241C60A14B0087E572 /* SD_IOS_Cartable.xcdatamodeld */,
+			);
+			path = "SD-IOS-Cartable";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80114A191C60A14B0087E572 /* SD-IOS-Cartable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80114A2F1C60A14B0087E572 /* Build configuration list for PBXNativeTarget "SD-IOS-Cartable" */;
+			buildPhases = (
+				80114A161C60A14B0087E572 /* Sources */,
+				80114A171C60A14B0087E572 /* Frameworks */,
+				80114A181C60A14B0087E572 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SD-IOS-Cartable";
+			productName = "SD-IOS-Cartable";
+			productReference = 80114A1A1C60A14B0087E572 /* SD-IOS-Cartable.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80114A121C60A14B0087E572 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Ashkan Ghaderi";
+				TargetAttributes = {
+					80114A191C60A14B0087E572 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 80114A151C60A14B0087E572 /* Build configuration list for PBXProject "SD-IOS-Cartable" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80114A111C60A14B0087E572;
+			productRefGroup = 80114A1B1C60A14B0087E572 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80114A191C60A14B0087E572 /* SD-IOS-Cartable */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80114A181C60A14B0087E572 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80114A2B1C60A14B0087E572 /* LaunchScreen.storyboard in Resources */,
+				80114A281C60A14B0087E572 /* Assets.xcassets in Resources */,
+				80114A231C60A14B0087E572 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80114A161C60A14B0087E572 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80114A261C60A14B0087E572 /* SD_IOS_Cartable.xcdatamodeld in Sources */,
+				80114A201C60A14B0087E572 /* ViewController.swift in Sources */,
+				80114A1E1C60A14B0087E572 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		80114A211C60A14B0087E572 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80114A221C60A14B0087E572 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		80114A291C60A14B0087E572 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80114A2A1C60A14B0087E572 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		80114A2D1C60A14B0087E572 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		80114A2E1C60A14B0087E572 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80114A301C60A14B0087E572 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SD-IOS-Cartable/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Home.SD-IOS-Cartable";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		80114A311C60A14B0087E572 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SD-IOS-Cartable/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Home.SD-IOS-Cartable";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80114A151C60A14B0087E572 /* Build configuration list for PBXProject "SD-IOS-Cartable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80114A2D1C60A14B0087E572 /* Debug */,
+				80114A2E1C60A14B0087E572 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80114A2F1C60A14B0087E572 /* Build configuration list for PBXNativeTarget "SD-IOS-Cartable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80114A301C60A14B0087E572 /* Debug */,
+				80114A311C60A14B0087E572 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		80114A241C60A14B0087E572 /* SD_IOS_Cartable.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				80114A251C60A14B0087E572 /* SD_IOS_Cartable.xcdatamodel */,
+			);
+			currentVersion = 80114A251C60A14B0087E572 /* SD_IOS_Cartable.xcdatamodel */;
+			path = SD_IOS_Cartable.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 80114A121C60A14B0087E572 /* Project object */;
+}
