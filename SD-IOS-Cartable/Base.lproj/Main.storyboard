@@ -18,49 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meE-fM-cDj" customClass="CardView" customModule="SD_IOS_Cartable" customModuleProvider="target">
-                                <rect key="frame" x="13" y="319" width="389" height="82"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEf-Ze-MwK">
-                                        <rect key="frame" x="301" y="4" width="74" height="74"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="gEf-Ze-MwK" secondAttribute="height" multiplier="1:1" id="HIq-2G-9L1"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="cartable.png"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کارتابل رفع عیب" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHB-Nm-xPL">
-                                        <rect key="frame" x="8" y="30" width="285" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="MgC-hU-TrJ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="pHB-Nm-xPL" secondAttribute="bottom" constant="31" id="4t3-OV-keC"/>
-                                    <constraint firstItem="pHB-Nm-xPL" firstAttribute="top" secondItem="meE-fM-cDj" secondAttribute="top" constant="30" id="BY5-Uf-XZ3"/>
-                                    <constraint firstItem="pHB-Nm-xPL" firstAttribute="leading" secondItem="meE-fM-cDj" secondAttribute="leading" constant="8" id="OLQ-kf-1Jy"/>
-                                    <constraint firstAttribute="width" secondItem="meE-fM-cDj" secondAttribute="height" multiplier="389:82" id="OUw-cp-es2"/>
-                                    <constraint firstAttribute="bottom" secondItem="gEf-Ze-MwK" secondAttribute="bottom" constant="4" id="eQm-3e-4dc"/>
-                                    <constraint firstItem="gEf-Ze-MwK" firstAttribute="leading" secondItem="pHB-Nm-xPL" secondAttribute="trailing" constant="8" id="gmg-In-zWE"/>
-                                    <constraint firstItem="gEf-Ze-MwK" firstAttribute="top" secondItem="meE-fM-cDj" secondAttribute="top" constant="4" id="viU-mj-H8A"/>
-                                    <constraint firstAttribute="trailing" secondItem="gEf-Ze-MwK" secondAttribute="trailing" constant="14" id="wvI-CZ-AEU"/>
-                                </constraints>
-                            </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eru-xg-6pY">
-                                <rect key="frame" x="0.0" y="697" width="414" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="RHw-uG-MjY"/>
-                                    <barButtonItem title="خروج از کاربری" id="BUb-Sy-YbS">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1qV-1k-oWj"/>
-                                </items>
-                                <color key="barTintColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
-                            </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odm-dp-ZM8" customClass="CardView" customModule="SD_IOS_Cartable" customModuleProvider="target">
                                 <rect key="frame" x="13" y="78" width="389" height="162"/>
                                 <subviews>
@@ -116,14 +73,14 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سبد تجهیزات کارشناس" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRh-TA-S94">
                                         <rect key="frame" x="15" y="28" width="281" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="yOJ-xq-oAX"/>
+                                            <constraint firstAttribute="height" constant="21" id="mH9-9I-5Zu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="yOJ-xq-oAX"/>
+                                                <exclude reference="mH9-9I-5Zu"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -150,6 +107,61 @@
                                     <constraint firstItem="JQq-4H-KcL" firstAttribute="leading" secondItem="fRh-TA-S94" secondAttribute="trailing" constant="8" id="xB1-7R-VfC"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXX-Dp-JwB">
+                                <rect key="frame" x="0.0" y="674" width="414" height="62"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.53333333329999999" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pXX-Dp-JwB" secondAttribute="height" multiplier="207:31" id="tzS-UT-4Hn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="خروج از کاربری">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Logout:" destination="2og-Ce-s4c" eventType="touchUpInside" id="BMg-ht-usw"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meE-fM-cDj" customClass="CardView" customModule="SD_IOS_Cartable" customModuleProvider="target">
+                                <rect key="frame" x="13" y="319" width="389" height="82"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEf-Ze-MwK">
+                                        <rect key="frame" x="301" y="4" width="74" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="gEf-Ze-MwK" secondAttribute="height" multiplier="1:1" id="HIq-2G-9L1"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="cartable.png"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کارتابل رفع عیب" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHB-Nm-xPL">
+                                        <rect key="frame" x="8" y="30" width="285" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="MgC-hU-TrJ"/>
+                                            <constraint firstAttribute="height" constant="21" id="bkV-Zi-jaZ"/>
+                                            <constraint firstAttribute="height" constant="21" id="eSA-XK-e80"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="MgC-hU-TrJ"/>
+                                                <exclude reference="bkV-Zi-jaZ"/>
+                                                <exclude reference="eSA-XK-e80"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pHB-Nm-xPL" secondAttribute="bottom" constant="31" id="4t3-OV-keC"/>
+                                    <constraint firstItem="pHB-Nm-xPL" firstAttribute="top" secondItem="meE-fM-cDj" secondAttribute="top" constant="30" id="BY5-Uf-XZ3"/>
+                                    <constraint firstItem="pHB-Nm-xPL" firstAttribute="leading" secondItem="meE-fM-cDj" secondAttribute="leading" constant="8" id="OLQ-kf-1Jy"/>
+                                    <constraint firstAttribute="width" secondItem="meE-fM-cDj" secondAttribute="height" multiplier="389:82" id="OUw-cp-es2"/>
+                                    <constraint firstAttribute="bottom" secondItem="gEf-Ze-MwK" secondAttribute="bottom" constant="4" id="eQm-3e-4dc"/>
+                                    <constraint firstItem="gEf-Ze-MwK" firstAttribute="leading" secondItem="pHB-Nm-xPL" secondAttribute="trailing" constant="8" id="gmg-In-zWE"/>
+                                    <constraint firstItem="gEf-Ze-MwK" firstAttribute="top" secondItem="meE-fM-cDj" secondAttribute="top" constant="4" id="viU-mj-H8A"/>
+                                    <constraint firstAttribute="trailing" secondItem="gEf-Ze-MwK" secondAttribute="trailing" constant="14" id="wvI-CZ-AEU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -157,15 +169,18 @@
                             <constraint firstItem="e4F-q9-CJV" firstAttribute="leading" secondItem="Rif-BW-l4F" secondAttribute="leadingMargin" constant="-7" id="6FS-QM-hgZ"/>
                             <constraint firstItem="meE-fM-cDj" firstAttribute="leading" secondItem="Rif-BW-l4F" secondAttribute="leadingMargin" constant="-7" id="7s5-Nf-WKC"/>
                             <constraint firstItem="odm-dp-ZM8" firstAttribute="top" secondItem="pbn-GL-Sbc" secondAttribute="bottom" constant="14" id="7x9-cM-8nE"/>
+                            <constraint firstItem="pXX-Dp-JwB" firstAttribute="leading" secondItem="Rif-BW-l4F" secondAttribute="leading" id="Ale-l2-Ihb"/>
                             <constraint firstItem="meE-fM-cDj" firstAttribute="top" secondItem="I1Z-en-eCT" secondAttribute="bottom" constant="28" id="BU4-lF-Fc5"/>
                             <constraint firstItem="odm-dp-ZM8" firstAttribute="leading" secondItem="Rif-BW-l4F" secondAttribute="leadingMargin" constant="-7" id="OwV-ng-zNm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="meE-fM-cDj" secondAttribute="trailing" constant="-8" id="VOp-Ug-9kS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="I1Z-en-eCT" secondAttribute="trailing" constant="-8" id="br6-tG-7qV"/>
+                            <constraint firstAttribute="trailing" secondItem="pXX-Dp-JwB" secondAttribute="trailing" id="cWg-Z4-MqJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="odm-dp-ZM8" secondAttribute="trailing" constant="-8" id="cx6-l5-v6V"/>
                             <constraint firstItem="meE-fM-cDj" firstAttribute="leading" secondItem="Rif-BW-l4F" secondAttribute="leadingMargin" constant="-7" id="ejE-Fg-zvm"/>
                             <constraint firstItem="I1Z-en-eCT" firstAttribute="top" secondItem="odm-dp-ZM8" secondAttribute="bottom" constant="30" id="gcI-Yo-o1v"/>
                             <constraint firstItem="e4F-q9-CJV" firstAttribute="leading" secondItem="Rif-BW-l4F" secondAttribute="leadingMargin" constant="-7" id="nYe-Ui-uyU"/>
                             <constraint firstItem="I1Z-en-eCT" firstAttribute="leading" secondItem="Rif-BW-l4F" secondAttribute="leadingMargin" constant="-7" id="ntM-ZT-IZv"/>
+                            <constraint firstItem="i9G-Vg-JIJ" firstAttribute="top" secondItem="pXX-Dp-JwB" secondAttribute="bottom" id="t1u-bt-1M1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e4F-q9-CJV" secondAttribute="trailing" constant="-8" id="weh-4a-3YA"/>
                         </constraints>
                         <variation key="default">
@@ -175,8 +190,15 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="Qhs-aj-Nai"/>
+                    <navigationItem key="navigationItem" id="Qhs-aj-Nai">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="plain" id="iri-DQ-UH0">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="userFullName" destination="iri-DQ-UH0" id="xmJ-h1-IF1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y4z-ub-BHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -212,6 +234,9 @@
                             <constraint firstItem="3mO-RN-Zme" firstAttribute="top" secondItem="T2w-uP-UK1" secondAttribute="bottom" id="q6O-yp-F6R"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="personDeviceTable" destination="T2w-uP-UK1" id="WTB-SM-ftI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jos-QJ-GnZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

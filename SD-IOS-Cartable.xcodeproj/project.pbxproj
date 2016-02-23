@@ -24,6 +24,8 @@
 		80114A6B1C60CD430087E572 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80114A691C60CD430087E572 /* NothingFoundCell.xib */; };
 		80114A6F1C60D1290087E572 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80114A6E1C60D1290087E572 /* AuthenticationViewController.swift */; };
 		80114A711C60D2880087E572 /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80114A701C60D2880087E572 /* MaterialTextField.swift */; };
+		801E90461C7C5F3600EABBC3 /* PersonDevicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801E90451C7C5F3600EABBC3 /* PersonDevicesModel.swift */; };
+		801E90481C7C771F00EABBC3 /* BriefPersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801E90471C7C771F00EABBC3 /* BriefPersonTableViewCell.swift */; };
 		80534C861C61DA2A00065AE3 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80534C851C61DA2A00065AE3 /* SwiftyJSON.swift */; };
 		80534C881C61DAE400065AE3 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80534C871C61DAE400065AE3 /* AuthenticationModel.swift */; };
 		80534C8A1C61E19500065AE3 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80534C891C61E19500065AE3 /* Extentions.swift */; };
@@ -54,6 +56,8 @@
 		80114A691C60CD430087E572 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		80114A6E1C60D1290087E572 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		80114A701C60D2880087E572 /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		801E90451C7C5F3600EABBC3 /* PersonDevicesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDevicesModel.swift; sourceTree = "<group>"; };
+		801E90471C7C771F00EABBC3 /* BriefPersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefPersonTableViewCell.swift; sourceTree = "<group>"; };
 		80534C851C61DA2A00065AE3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		80534C871C61DAE400065AE3 /* AuthenticationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
 		80534C891C61E19500065AE3 /* Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				80534C8B1C61EB9B00065AE3 /* User+CoreDataProperties.swift */,
 				80534C8C1C61EB9B00065AE3 /* User.swift */,
 				80534C871C61DAE400065AE3 /* AuthenticationModel.swift */,
+				801E90451C7C5F3600EABBC3 /* PersonDevicesModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 				80114A5A1C60AC490087E572 /* MainViewController.swift */,
 				80114A641C60C99F0087E572 /* BriefPersonDevicesViewController.swift */,
 				80114A6E1C60D1290087E572 /* AuthenticationViewController.swift */,
+				801E90471C7C771F00EABBC3 /* BriefPersonTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -313,9 +319,11 @@
 				80534C8D1C61EB9B00065AE3 /* User+CoreDataProperties.swift in Sources */,
 				80114A261C60A14B0087E572 /* SD_IOS_Cartable.xcdatamodeld in Sources */,
 				80534C8A1C61E19500065AE3 /* Extentions.swift in Sources */,
+				801E90461C7C5F3600EABBC3 /* PersonDevicesModel.swift in Sources */,
 				80114A711C60D2880087E572 /* MaterialTextField.swift in Sources */,
 				80114A5F1C60B0AF0087E572 /* Constans.swift in Sources */,
 				80114A6F1C60D1290087E572 /* AuthenticationViewController.swift in Sources */,
+				801E90481C7C771F00EABBC3 /* BriefPersonTableViewCell.swift in Sources */,
 				80114A5E1C60B0AF0087E572 /* CardView.swift in Sources */,
 				80534C861C61DA2A00065AE3 /* SwiftyJSON.swift in Sources */,
 				80114A651C60C99F0087E572 /* BriefPersonDevicesViewController.swift in Sources */,

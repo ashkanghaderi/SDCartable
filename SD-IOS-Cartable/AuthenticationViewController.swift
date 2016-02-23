@@ -27,6 +27,8 @@ class AuthenticationViewController: UIViewController,UITextFieldDelegate {
     
         userNameTxt.delegate = self
         passwordTxt.delegate = self
+        userNameTxt.text = ""
+        passwordTxt.text = ""
         CheckLoginNecessary()
     }
 
@@ -261,7 +263,8 @@ class AuthenticationViewController: UIViewController,UITextFieldDelegate {
     
     func CheckLoginNecessary(){
         fetchAndSetResult()
-        if self.user != nil {
+        let userName = self.user?.valueForKey("userfullname")?.stringValue
+        if userName != nil && userName != "" {
             
             performSegueWithIdentifier("LoginSegue", sender: self.user)
             
