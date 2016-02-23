@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-var ATHENTICATION_URL = "http://85.133.187.41:40002/Service/MobileCartableService.svc/AuthenticationAction"
+var ATHENTICATION_URL = "http://85.133.187.41:40002/Service/MobileCartableService.svc/AuthenticateAction"
+
 
 let SHADOW_COLOR : CGFloat = 157.0 / 255.0
 

@@ -68,42 +68,54 @@ class AuthenticationViewController: UIViewController,UITextFieldDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "LoginSegue" {
-            let destinationVC = segue.destinationViewController as! BriefPersonDevicesViewController
-            destinationVC.user = sender as? User
-            
-        }
+        
     }
     
     
-    func GenerateLoginParameters() -> Dictionary<String, String> {
-        return  ["network":"Normal","username":userNameTxt.text!,"password":passwordTxt.text!,"softwareName":"IOS-ServiceDesk","softwareVersion":"110","deviceOs":"IOS","osVersion":UIDevice.currentDevice().systemVersion,"deviceModel":UIDevice.currentDevice().model,"deviceSerial":String(UIDevice.currentDevice().identifierForVendor)]
+    func GenerateJsonString() -> String{
+        
+        return  "{\"network\" : \"Normal\",\"username\":\"\(userNameTxt.text!)\",\"password\":\"\(passwordTxt.text!)\",\"softwareName\":\"IOS-ServiceDesk\",\"softwareVersion\":\"110\",\"deviceOs\":\"IOS\",\"osVersion\":\"\(UIDevice.currentDevice().systemVersion)\",\"deviceModel\":\"\(UIDevice.currentDevice().model)\",\"deviceSerial\":\"\((UIDevice.currentDevice().identifierForVendor?.UUIDString)!)\"}"
     }
     
     
-    func LoginOperation(params : Dictionary<String, String>, url : String) {
+    func GenerateLoginParameters() -> Dictionary<String, AnyObject> {
+        return  ["network":"Normal","username":"\(userNameTxt.text!)","password":"\(passwordTxt.text!)","softwareName":"IOS-ServiceDesk","softwareVersion":"110","deviceOs":"IOS","deviceModel":"\(UIDevice.currentDevice().model)","deviceSerial":"\(String((UIDevice.currentDevice().identifierForVendor?.UUIDString)!))"]
+    }
+    
+    
+    func LoginOperation(params : Dictionary<String, AnyObject>, url : String) {
+        
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
         let session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
         
         do {
-            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(params, options: .PrettyPrinted)
+            let paramObj = try NSJSONSerialization.dataWithJSONObject(params, options: .PrettyPrinted)
+            
+            let jsonStr = NSString(data: paramObj, encoding: NSUTF8StringEncoding)
+            print("Sent JSON: \(jsonStr!)")
+            
+            request.HTTPBody =  paramObj
         } catch {
             //handle error. Probably return or mark function as throws
             print(error)
             return
         }
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-            // handle error
-            guard error == nil else { return }
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        
+        let task = session.dataTaskWithRequest(request) { data, response, error in
             
-            if let error = error where error.code == -999 {
-                return  // Search was cancelled
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 
-            } else if let httpResponse = response as? NSHTTPURLResponse where httpResponse.statusCode == 200 {
+                guard data != nil else {
+                    print("no data found: \(error)")
+                    return
+                }
+                
+                print("parse JSON: \(data)")
                 
                 if let data = data, receivedJSON : JSON = JSON(data: data) {
                     
@@ -112,30 +124,10 @@ class AuthenticationViewController: UIViewController,UITextFieldDelegate {
                     if result.first?.guidToken != nil && result.first?.guidToken != ""{
                         self.Login(result.first!)
                     }
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.isLoading = false
-                        
-                        if result.first?.guidToken == nil && result.first?.guidToken == ""{
-                            self.showError(USER_NAME_OR_PASSWORD_ERROR)
-                        }
-                    }
-                    return
                 }
                 
-            } else {
-                print("Failure! \(response!)")
-            }
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                
-                self.isLoading = false
-                
-                self.showNetworkError()
-            }
-
-           })
-        
+            })
+          }
         task.resume()
     }
     
@@ -168,9 +160,9 @@ class AuthenticationViewController: UIViewController,UITextFieldDelegate {
         print("data! \(json)")
         var loginResults = [AuthenticationModel]()
         
+        let resultRoot = json["ListResult"]
         
-        
-        for (_, subJson): (String, JSON) in json{
+        for (_, subJson): (String, JSON) in resultRoot{
             
             let loginResult :AuthenticationModel? = AuthenticationModel()
             
@@ -257,16 +249,13 @@ class AuthenticationViewController: UIViewController,UITextFieldDelegate {
     }
     
     func Login(auth : AuthenticationModel){
-
-      deleteUser()
-      saveNewUser(auth)
-        let currentUser = User()
-        currentUser.setValue(auth.appVersion, forKey: "appversion")
-        currentUser.setValue(auth.guidToken, forKey: "guidtoken")
-        currentUser.setValue(Int(auth.personId!), forKey: "personid")
-        currentUser.setValue(auth.userFullName, forKey: "userfullname")
-        
-      performSegueWithIdentifier("LoginSegue", sender: currentUser)
+        deleteUser()
+        saveNewUser(auth)
+        NSUserDefaults.standardUserDefaults().setObject(auth.userFullName, forKey: "UserFullName")
+        NSUserDefaults.standardUserDefaults().setObject(auth.guidToken, forKey: "GuidToken")
+        NSUserDefaults.standardUserDefaults().setObject(Int(auth.personId!), forKey: "PersonId")
+        NSUserDefaults.standardUserDefaults().setObject(auth.appVersion, forKey: "AppVersion")
+        performSegueWithIdentifier("LoginSegue", sender: nil)
 
     }
     

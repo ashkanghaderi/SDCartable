@@ -10,7 +10,7 @@ import UIKit
 
 class BriefPersonDevicesViewController: UIViewController {
 
-    var user : User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
