@@ -169,7 +169,7 @@ class AuthenticationViewController: UIViewController,UITextFieldDelegate {
             let loginResult :AuthenticationModel? = AuthenticationModel()
             
             
-            loginResult?.userFullName = subJson["userFullName"].stringValue
+            loginResult?.userFullName = subJson["UserFullName"].stringValue
             loginResult?.guidToken = subJson["GuidToken"].stringValue
             loginResult?.appVersion = subJson["AppVersion"].stringValue
             loginResult?.personId = subJson["PersonId"].int64Value
@@ -263,11 +263,13 @@ class AuthenticationViewController: UIViewController,UITextFieldDelegate {
     
     func CheckLoginNecessary(){
         fetchAndSetResult()
-        let userName = self.user?.valueForKey("userfullname")?.stringValue
+        if self.user != nil {
+        let userName = self.user?.valueForKey("userfullname") as? String
         if userName != nil && userName != "" {
             
             performSegueWithIdentifier("LoginSegue", sender: self.user)
             
+            }
         }
     }
 

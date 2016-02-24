@@ -1,26 +1,26 @@
 //
-//  BriefPersonDevicesViewController.swift
+//  WorkGroupViewController.swift
 //  SD-IOS-Cartable
 //
-//  Created by Ashkan Ghaderi on 2/2/16.
+//  Created by Ashkan Ghaderi on 2/24/16.
 //  Copyright © 2016 Ashkan Ghaderi. All rights reserved.
 //
 
 import UIKit
 
-class BriefPersonDevicesViewController: UIViewController {
+class WorkGroupViewController: UIViewController {
 
+    @IBOutlet weak var WorkGroupTable: UITableView!
     
-    struct PersonDeviceTableViewCellIdentifiers {
-        static let PersonDeviceTableCell = "PersonDeviceTableCell"
+    struct WorkGroupTableViewCellIdentifiers {
+        static let WorkGroupTableCell = "WorkGroupTableCell"
         static let nothingFoundCell = "NothingFoundCell"
         static let loadingCell = "LoadingCell"
         
     }
     
-    @IBOutlet weak var personDeviceTable: UITableView!
-    
-    var personDevices : [PersonDevicesModel] = [PersonDevicesModel]()
+
+    var workGroups : [WorkGroupModel] = [WorkGroupModel]()
     
     var isLoading = false
     var isSearchMode = false
@@ -31,25 +31,25 @@ class BriefPersonDevicesViewController: UIViewController {
         super.viewDidLoad()
         
         
-        if (personDeviceTable != nil) {
-            var cellNib = UINib(nibName: PersonDeviceTableViewCellIdentifiers.PersonDeviceTableCell, bundle: nil)
-            personDeviceTable.registerNib(cellNib, forCellReuseIdentifier: PersonDeviceTableViewCellIdentifiers.PersonDeviceTableCell)
+        if (WorkGroupTable != nil) {
+            var cellNib = UINib(nibName: WorkGroupTableViewCellIdentifiers.WorkGroupTableCell, bundle: nil)
+            WorkGroupTable.registerNib(cellNib, forCellReuseIdentifier: WorkGroupTableViewCellIdentifiers.WorkGroupTableCell)
             
-            cellNib = UINib(nibName: PersonDeviceTableViewCellIdentifiers.nothingFoundCell, bundle: nil)
-            personDeviceTable.registerNib(cellNib, forCellReuseIdentifier: PersonDeviceTableViewCellIdentifiers.nothingFoundCell)
+            cellNib = UINib(nibName: WorkGroupTableViewCellIdentifiers.nothingFoundCell, bundle: nil)
+            WorkGroupTable.registerNib(cellNib, forCellReuseIdentifier: WorkGroupTableViewCellIdentifiers.nothingFoundCell)
             
-            cellNib = UINib(nibName: PersonDeviceTableViewCellIdentifiers.loadingCell, bundle: nil)
-            personDeviceTable.registerNib(cellNib, forCellReuseIdentifier: PersonDeviceTableViewCellIdentifiers.loadingCell)
+            cellNib = UINib(nibName: WorkGroupTableViewCellIdentifiers.loadingCell, bundle: nil)
+            WorkGroupTable.registerNib(cellNib, forCellReuseIdentifier: WorkGroupTableViewCellIdentifiers.loadingCell)
             
-            personDeviceTable.rowHeight = 120
+            
             
         }
     }
     
     override func viewDidAppear(animated: Bool) {
-        personDeviceTable.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0,
+        WorkGroupTable.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 0,
             right: 0)
-        LoginOperation(GenerateLoginParameters(),url: PERSON_DEVICES_URL)
+        LoginOperation(GenerateLoginParameters(),url: WORK_GROUP_URL)
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,7 +70,7 @@ class BriefPersonDevicesViewController: UIViewController {
     
     func LoginOperation(params : Dictionary<String, AnyObject>, url : String) {
         isLoading = true
-        personDeviceTable.reloadData()
+        WorkGroupTable.reloadData()
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
         let session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
@@ -105,12 +105,12 @@ class BriefPersonDevicesViewController: UIViewController {
                 
                 if let data = data, receivedJSON : JSON = JSON(data: data) {
                     
-                    let result : [PersonDevicesModel] = self.parseDictionary(receivedJSON)
+                    let result : [WorkGroupModel] = self.parseDictionary(receivedJSON)
                     
                     self.isLoading = false
-                    self.personDevices = result
+                    self.workGroups = result
                     
-                    self.personDeviceTable.reloadData()
+                    self.WorkGroupTable.reloadData()
                 }
                 
             })
@@ -143,31 +143,30 @@ class BriefPersonDevicesViewController: UIViewController {
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    func parseDictionary(json: JSON) -> [PersonDevicesModel] {
+    func parseDictionary(json: JSON) -> [WorkGroupModel] {
         print("data! \(json)")
-        var loginResults = [PersonDevicesModel]()
+        var worksResults = [WorkGroupModel]()
         
         let resultRoot = json["ListResult"]
         
         for (_, subJson): (String, JSON) in resultRoot{
             
-            let loginResult :PersonDevicesModel? = PersonDevicesModel()
+            let wResult :WorkGroupModel? = WorkGroupModel()
             
             
-            loginResult?.deviceAliasName = subJson["DeviceAliasName"].stringValue
-            loginResult?.failureDescription = subJson["FailureDescription"].stringValue
-            loginResult?.qcSerial = subJson["QcSerial"].stringValue
+            wResult?.workGroupId = subJson["WorkGroupId"].intValue
+            wResult?.workGroupTitle = subJson["WorkGroupTitle"].stringValue
             
             
             
-            if let result = loginResult {
-                loginResults.append(result)
+            if let result = wResult {
+                worksResults.append(result)
             }
             
         }
         
         
-        return loginResults
+        return worksResults
     }
     func parseJSON(data: NSData) -> [String: AnyObject]? {
         do {
@@ -181,50 +180,48 @@ class BriefPersonDevicesViewController: UIViewController {
     
 }
 
-extension BriefPersonDevicesViewController: UITableViewDataSource{
+extension WorkGroupViewController: UITableViewDataSource{
     
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
             if isLoading {
                 return 1
-            }  else if personDevices.count == 0 {
+            }  else if workGroups.count == 0 {
                 return 1
             }  else {
-                return personDevices.count
+                return workGroups.count
             }
     }
     
-    /*func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label: UILabel = UILabel()
-        label.text = "تجهیزات در اختیار کارشناس"
-        label.backgroundColor = UIColor.clearColor()
-        label.textAlignment = .Right
-        return label
-    }*/
-    
-    
-    
+        
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             if isLoading {
-                let cell = tableView.dequeueReusableCellWithIdentifier(PersonDeviceTableViewCellIdentifiers.loadingCell, forIndexPath:indexPath)
+                let cell = tableView.dequeueReusableCellWithIdentifier(WorkGroupTableViewCellIdentifiers.loadingCell, forIndexPath:indexPath)
+                
+                WorkGroupTable.rowHeight = 90
                 
                 let spinner = cell.viewWithTag(100) as! UIActivityIndicatorView
                 spinner.startAnimating()
                 return cell
                 
-            } else if personDevices.count == 0 {
-                return tableView.dequeueReusableCellWithIdentifier(PersonDeviceTableViewCellIdentifiers.nothingFoundCell,forIndexPath: indexPath)
+            } else if workGroups.count == 0 {
+                
+                WorkGroupTable.rowHeight = 60
+                
+                return tableView.dequeueReusableCellWithIdentifier(WorkGroupTableViewCellIdentifiers.nothingFoundCell,forIndexPath: indexPath)
                 
             } else {
-                let cell = tableView.dequeueReusableCellWithIdentifier(PersonDeviceTableViewCellIdentifiers.PersonDeviceTableCell,forIndexPath: indexPath) as! BriefPersonTableViewCell
+                let cell = tableView.dequeueReusableCellWithIdentifier(WorkGroupTableViewCellIdentifiers.WorkGroupTableCell,forIndexPath: indexPath) as! WorkGroupTableViewCell
                 
-                let personDevice : PersonDevicesModel
-
-                personDevice = personDevices[indexPath.row]
-               
+                WorkGroupTable.rowHeight = 70
                 
-                cell.configuration(personDevice)
+                let workGroup : WorkGroupModel
+                
+                workGroup = workGroups[indexPath.row]
+                
+                
+                cell.Configuration(workGroup)
                 
                 return cell
             }
@@ -232,7 +229,7 @@ extension BriefPersonDevicesViewController: UITableViewDataSource{
     
 }
 
-extension BriefPersonDevicesViewController: UITableViewDelegate {
+extension WorkGroupViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
@@ -241,7 +238,7 @@ extension BriefPersonDevicesViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        if personDevices.count == 0 || isLoading {
+        if workGroups.count == 0 || isLoading {
             return nil
         } else {
             return indexPath

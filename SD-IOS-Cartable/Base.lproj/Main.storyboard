@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--مدیریت خدمات پشتیبانی-->
         <scene sceneID="oXf-Uh-KTz">
             <objects>
                 <viewController id="2og-Ce-s4c" customClass="MainViewController" customModule="SD_IOS_Cartable" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,15 +21,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odm-dp-ZM8" customClass="CardView" customModule="SD_IOS_Cartable" customModuleProvider="target">
                                 <rect key="frame" x="13" y="78" width="389" height="162"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کاربر گرامی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yU-6V-40f">
-                                        <rect key="frame" x="20" y="17" width="354" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="0yU-6V-40f" secondAttribute="height" multiplier="354:31" id="lkV-Zo-Meu"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="به سیستم مدیریت خدمات بشتیبانی شرکت توسعه فناوری خوارزمی خوش آمدید" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3xN-At-0Ej">
                                         <rect key="frame" x="15" y="62" width="359" height="86"/>
                                         <constraints>
@@ -39,6 +30,15 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کاربر گرامی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yU-6V-40f">
+                                        <rect key="frame" x="20" y="17" width="354" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="0yU-6V-40f" secondAttribute="height" multiplier="354:31" id="lkV-Zo-Meu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -130,6 +130,9 @@
                                             <constraint firstAttribute="width" secondItem="gEf-Ze-MwK" secondAttribute="height" multiplier="1:1" id="HIq-2G-9L1"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="cartable.png"/>
+                                        <connections>
+                                            <segue destination="cgs-1f-Gnj" kind="show" id="sTH-Ij-Wuc"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کارتابل رفع عیب" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHB-Nm-xPL">
                                         <rect key="frame" x="8" y="30" width="285" height="21"/>
@@ -190,7 +193,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="Qhs-aj-Nai">
+                    <navigationItem key="navigationItem" title="مدیریت خدمات پشتیبانی" id="Qhs-aj-Nai">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" style="plain" id="iri-DQ-UH0">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -204,7 +207,46 @@
             </objects>
             <point key="canvasLocation" x="1935" y="301"/>
         </scene>
-        <!--Brief Person Devices View Controller-->
+        <!--گروه های کاربری-->
+        <scene sceneID="rU0-TA-nAe">
+            <objects>
+                <viewController id="cgs-1f-Gnj" customClass="WorkGroupViewController" customModule="SD_IOS_Cartable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CqF-7N-hW1"/>
+                        <viewControllerLayoutGuide type="bottom" id="nEA-9b-KtK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZJD-QU-uIG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VfV-w9-0DB">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="cgs-1f-Gnj" id="BQO-GN-awb"/>
+                                    <outlet property="delegate" destination="cgs-1f-Gnj" id="O83-k0-oRr"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VfV-w9-0DB" firstAttribute="leading" secondItem="ZJD-QU-uIG" secondAttribute="leading" id="1AZ-3s-xHL"/>
+                            <constraint firstAttribute="trailing" secondItem="VfV-w9-0DB" secondAttribute="trailing" id="5A6-ZH-1nw"/>
+                            <constraint firstItem="VfV-w9-0DB" firstAttribute="top" secondItem="CqF-7N-hW1" secondAttribute="bottom" id="gOG-Yo-sNr"/>
+                            <constraint firstItem="nEA-9b-KtK" firstAttribute="top" secondItem="VfV-w9-0DB" secondAttribute="bottom" id="hzz-Fj-c17"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="گروه های کاربری" id="6fs-4m-U1u"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="WorkGroupTable" destination="VfV-w9-0DB" id="HbF-z5-WEv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dpg-Jh-FdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2431" y="659"/>
+        </scene>
+        <!--تجهیزات کارشناس-->
         <scene sceneID="JZJ-Yh-CfH">
             <objects>
                 <viewController id="5b8-78-8vy" customClass="BriefPersonDevicesViewController" customModule="SD_IOS_Cartable" customModuleProvider="target" sceneMemberID="viewController">
@@ -216,7 +258,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T2w-uP-UK1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="T2w-uP-UK1">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -228,19 +270,20 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="T2w-uP-UK1" firstAttribute="leading" secondItem="4QK-U7-ZDO" secondAttribute="leading" id="LCN-CQ-9TA"/>
-                            <constraint firstAttribute="trailing" secondItem="T2w-uP-UK1" secondAttribute="trailing" id="NkA-AO-gU3"/>
-                            <constraint firstItem="T2w-uP-UK1" firstAttribute="top" secondItem="RUh-ig-gCk" secondAttribute="bottom" id="pMd-9U-axN"/>
-                            <constraint firstItem="3mO-RN-Zme" firstAttribute="top" secondItem="T2w-uP-UK1" secondAttribute="bottom" id="q6O-yp-F6R"/>
+                            <constraint firstItem="T2w-uP-UK1" firstAttribute="leading" secondItem="4QK-U7-ZDO" secondAttribute="leading" id="2HQ-3C-X51"/>
+                            <constraint firstItem="T2w-uP-UK1" firstAttribute="top" secondItem="RUh-ig-gCk" secondAttribute="bottom" id="L3N-5r-ub7"/>
+                            <constraint firstAttribute="trailing" secondItem="T2w-uP-UK1" secondAttribute="trailing" id="bBh-Yn-sGm"/>
+                            <constraint firstItem="3mO-RN-Zme" firstAttribute="top" secondItem="T2w-uP-UK1" secondAttribute="bottom" id="g9f-Yc-o0M"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="تجهیزات کارشناس" id="HfN-My-UVV"/>
                     <connections>
                         <outlet property="personDeviceTable" destination="T2w-uP-UK1" id="WTB-SM-ftI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jos-QJ-GnZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439" y="301"/>
+            <point key="canvasLocation" x="2431" y="-136"/>
         </scene>
         <!--Authentication View Controller-->
         <scene sceneID="nca-tC-Hdf">
